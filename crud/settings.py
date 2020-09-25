@@ -23,12 +23,12 @@ load_dotenv(find_dotenv(), override=True)
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('secret_key')
+SECRET_KEY = '^^$xumf^_(o7&7i5=ddj72=^p-ihizv*8*m6l9(#ys$vc4nlta'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = DEBUG = os.getenv("debug")
+DEBUG = DEBUG = False
 
-ALLOWED_HOSTS = os.getenv("allowed_hosts").split(',')
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'crud.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.getenv("NAME"),
-        'USER': os.getenv("USER"),
-        'PASSWORD': os.getenv("PASSWORD"),
-        'HOST': os.getenv("HOST"),
-        'PORT': os.getenv('PORT'),
+        'NAME': 'test_project_db',
+        'USER': 'django_aws_demo',
+        'PASSWORD': 'sabin123',
+        'HOST': 'django-aws-demo.c1gbwfvqyhd5.us-east-1.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
