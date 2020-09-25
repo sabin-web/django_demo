@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Employee Information:</h1>
+<div style="padding-left:470px">
+<a href="{% url 'myapp:create' %}">
+	<button>Create a new Employee</button>
+</a>
+</div>
+	<table width="50%" border ='1px solid black' >
+
+	<thead>
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email</th>
+			<th>Department</th>
+			<th colspan="2">Actions</th>
+		</tr>
+	</thead>
+
+<tbody>
+	{% for dat in data %}
+<tr>
+	<td>{{dat.first_name}}</td>
+	<td>{{dat.last_name}}</td>
+	<td>{{dat.email}}</td>
+	<td>{{dat.department}}</td>
+	
+	<td><a href="{% url 'myapp:update' dat.id%}">
+	<button>Update</button>
+</a></td>
+<td><a href="{% url 'myapp:delete' dat.id %}">
+	<button>Delete</button>
+</a></td>
+</tr>
+{% endfor %}
+</tbody>
+	</table>
+
+	
+</body>
+</html>
